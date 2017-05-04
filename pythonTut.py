@@ -1,5 +1,3 @@
-# This is an example edit to illustrate the pull request function on GitHub
-
 # # Force user to enter a number.
 #
 # while True:
