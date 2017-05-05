@@ -269,6 +269,124 @@
 #
 # # ---------------------------------------------------------------------------------------------------
 
+# Functions examples
+
+# def addNumbers(num1, num2):
+#     return num1 + num2
+#
+# print("5 + 4 = ", addNumbers(5, 4))
+
+# # ------------------------------------------------------------------------------------------------------
+
+
+# def assignName():
+#     name = "Doug"
+#
+# assignName()
+
+# # ------------------------------------------------------------------------------------------------------
+
+# globalName = "Sally"
+# def changeName():
+#     global globalName
+#     globalName = "Sammy"
+#
+# changeName()
+# print(globalName)
+
+# # ------------------------------------------------------------------------------------------------------
+
+# def getSum(num1, num2):
+#     sum = num1 + num2
+#
+# print(getSum(5, 4)) # Returns none because function getSum has no return value
+
+# # ------------------------------------------------------------------------------------------------------
+
+# Solve for x
+# x + 4 = 9
+# x will always be the first value received and you only will deal with addition
+# Outside function, have a print stmnt to print out solution of equation
+
+# def solveEquation(equation):
+#
+#     # Receive the string (algebraic equation) and split the string into variables
+#     x, add, num2, equal, num3 = equation.split()
+#
+#     # Inside function, convert string into ints.
+#     num2, num3 = int(num2), int(num3)
+#
+#     # Convert result into a string and join it to the string "x = "
+#     return "x = " + str(num3 - num2)
+#
+# # Outside function, have a print stmnt to print out solution of equation
+# print(solveEquation("x + 4 = 9"))
+
+# # ----------------------------------------------------------------------------------------
+
+# # Return multiple values
+#
+# def multDivide(num1, num2):
+#     try:
+#         return (num1 * num2), (num1 / num2)
+#     except ZeroDivisionError:
+#         print("Division by zero is not allowed")
+#
+# mult, divide = multDivide(5, 4)
+# print("5 * 4 = ", mult)
+# print("5 / 4", divide)
+#
+# # -----------------------------------------------------------------------------------------
+
+# List of primes
+
+# A prime can only be divided by 1 and itself
+# 5 is a prime, because it is divisible by 1 and 5
+# 6 is not prime because it is divisible by 1, 2, 3 and 6
+
+# Input max prime
+# Use for loop for checking modulus == 0, return True, else False
+
+
+# Function to check if number is prime
+def isPrime(num):
+    for i in range(2, num):
+        if num % i == 0:
+            return False
+
+    return True
+
+# Function to get list of primes upto a max number.
+def getPrimeList(maxNum):
+    listPrimes = []
+    for x in range(2, maxNum):
+        if isPrime(x):
+            listPrimes.append(x)
+
+    return listPrimes
+
+
+# Main function calling the prime functions above.
+maxNumber = int(input("Please enter a maximum prime number you want to search"))
+listOfPrimes = getPrimeList(maxNumber)
+for j in listOfPrimes:
+    print(j)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
