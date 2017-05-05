@@ -1,3 +1,180 @@
+# # Ask the user to input their name and assign it a variable named name.
+#
+# name = input('What is your name ')
+#
+# # Print out hello followed by the name entered.
+#
+# print ('Hello', name)
+#
+# #--------------------------------------------------------------------------------------------#
+#
+#
+# # Math on numbers
+#
+# num1, num2 = input ('Enter 2 numbers: '). split()
+# num1 = int(num1)
+# num2 = int(num2)
+#
+# sum = num1 + num2
+#
+# difference = num1 - num2
+#
+# product = num1 * num2
+#
+# quotient = num1 / num2
+#
+# remainder = num1 % num2
+#
+# print("{} + {} = {}". format(num1, num2, sum))
+# print("{} - {} = {}". format(num1, num2, difference))
+# print("{} * {} = {}". format(num1, num2, product))
+# print("{} / {} = {}". format(num1, num2, quotient))
+# print("{} % {} = {}". format(num1, num2, remainder))
+#
+# #--------------------------------------------------------------------------------------------
+#
+# # Program to convert miles to kilometers
+#
+# miles = input('Enter distance in miles: ')
+# miles = int(miles)
+# kilometers = miles * 1.60934
+# print("{} miles = {} kilometers". format(miles, kilometers))
+#
+# #---------------------------------------------------------------------------------------------
+#
+# # Calculator
+#
+# num1, operator, num2 = input('Enter calculation: ').split()
+# num1 = int(num1)
+# num2 = int(num2)
+#
+# if operator == "+":
+#     print("{} + {} = {}".format(num1, num2, (str(num1 + num2))))
+#
+# elif operator == "-":
+#     print("{} - {} = {}".format(num1, num2, (str(num1 - num2))))
+#
+# elif operator == "*":
+#     print("{} * {} = {}".format(num1, num2, (str(num1 * num2))))
+#
+# elif operator == "/":
+#     print("{} / {} = {}".format(num1, num2, (str(num1 / num2))))
+#
+# elif operator == "%":
+#     print("{} % {} = {}".format(num1, num2, (str(num1 % num2))))
+#
+# else:
+#     print("Please enter valid operator ")
+#
+# #------------------------------------------------------------------------------------
+#
+# Print odd numbers from 1 to 20.
+#
+# for i in range(1, 20):
+#     print(i)
+#
+# for i in range(1, 20):
+#     if i % 2 != 0:
+#         print("i = ", i)
+#
+# #-------------------------------------------------------------------------------------
+#
+# # Compound interest rate computation.
+#
+# investedMoney = input("How much do you want to invest: ")
+# interestRate = input("Expected interest rate: ")
+#
+# investedMoney = float(investedMoney)
+# interestRate = float(interestRate) * 0.01
+#
+# for i in range (1, 10):
+#     investedMoney = investedMoney + interestRate * investedMoney
+#
+# print("Investment after 10 years: , {:0.2f}".format(investedMoney))
+#
+# #---------------------------------------------------------------------------------------
+#
+# i = 0.11111111111111111111111111111111
+# j = 0.00000000000000010000000000000001
+# print("Answer : {:.32}".format(i + j))
+#
+# #---------------------------------------------------------------------------------------
+#
+# Generate random numbers.
+#
+# import random
+#
+# randNum = random.randrange(1, 50)
+# i = 1
+# while i != randNum:
+#     i = i + 1
+#
+# print("The random value is: ", randNum)
+#
+# #----------------------------------------------------------------------------------------
+#
+# #Print the odd numbers.
+#
+# i = 1
+# while i <= 20:
+#     if (i % 2) == 0:
+#         i += 1
+#         continue
+#     if i == 15:
+#         break
+#     print ("Odd: ", i)
+#     i += 1
+#
+# #-----------------------------------------------------------------------------------
+#
+# Pine Tree example
+#
+# treeHeight = input("How tall is the tree: ")
+# treeHeight = int(treeHeight)
+#
+# spaces = treeHeight - 1
+# hashes = 1
+# stumpSpaces = treeHeight - 1
+# while treeHeight != 0:
+#
+#     for i in range(spaces):
+#         print(' ', end="")
+#
+#     for i in range(hashes):
+#         print('#', end="")
+#     print()
+#     spaces = spaces - 1
+#     hashes = hashes + 2
+#     treeHeight = treeHeight - 1
+#
+# for i in range(stumpSpaces):
+#     print(' ', end="")
+#
+# print('#')
+#
+# #-----------------------------------------------------------------------------------------
+#
+# Program to hide a string in uppercase
+# Receive an uppercase string and then hide its meaning in unicode.
+# Then translate it back.
+#
+# normalString = input("Enter a string to hide in uppercase: ")
+# secretString = ""
+# for char in normalString:
+#     secretString += str(ord(char))
+#
+# print("Secret string = ", secretString)
+#
+# normalString = ""
+# # secretString = str(72105100101)
+# for i in range(0, (len(secretString) - 1), 2):
+#     charCode = secretString[i] + secretString[i + 1]
+#     normalString += chr(int(charCode))
+#
+# print("Original string = ", normalString)
+#
+# #--------------------------------------------------------------------------------------------------
+
 # # Force user to enter a number.
 #
 # while True:
@@ -349,28 +526,274 @@
 
 
 # Function to check if number is prime
-def isPrime(num):
-    for i in range(2, num):
-        if num % i == 0:
-            return False
+# def isPrime(num):
+#     for i in range(2, num):
+#         if num % i == 0:
+#             return False
+#
+#     return True
+#
+# # Function to get list of primes upto a max number.
+# def getPrimeList(maxNum):
+#     listPrimes = []
+#     for x in range(2, maxNum):
+#         if isPrime(x):
+#             listPrimes.append(x)
+#
+#     return listPrimes
+#
+#
+# # Main function calling the prime functions above.
+# maxNumber = int(input("Please enter a maximum prime number you want to search: "))
+# listOfPrimes = getPrimeList(maxNumber)
+# for j in listOfPrimes:
+#     print(j)
+#
+# # -------------------------------------------------------------------------------------------------
 
-    return True
+# # Function dealing with an unknown number of arguments.
+#
+# def sumAll(*args):
+#     sum = 0
+#     for i in args:
+#         sum += i
+#
+#     return sum
+#
+# print("Sum: ", sumAll(1, 2, 3, 4, 5, 6))
+#
+# # ---------------------------------------------------------------------------------------------------
 
-# Function to get list of primes upto a max number.
-def getPrimeList(maxNum):
-    listPrimes = []
-    for x in range(2, maxNum):
-        if isPrime(x):
-            listPrimes.append(x)
+# # Function example for calculating area of differen shapes
+#
+# import math
+#
+#
+# def getArea(shape):
+#     shape = shape.lower()
+#
+#     if shape == "rectangle":
+#         rectangleArea()
+#
+#     elif shape == "square":
+#         squareArea()
+#
+#     elif shape == "circle":
+#         circleArea()
+#
+#     else:
+#         print ("Please enter rectangle, square or circle.")
+#
+# def rectangleArea():
+#
+#     length = float(input("Enter the length of the rectangle:"))
+#     width = float(input("Enter the width of the rectangle: "))
+#
+#     area = length * width
+#
+#     print("The area of the rectangle is :", area)
+#
+# def circleArea():
+#
+#     radius = float(input("Enter the radius of the circle: "))
+#     area = math.pi * radius * radius
+#
+#     print("The area of the circle is {:.2f}".format(area))
+#
+# def squareArea():
+#
+#     side = float(input("Enter the dimension of the square: "))
+#     area = side * side
+#
+#     print("The area of the square is: ", area)
+#
+#
+# def main():
+#     shapeType = input("Get Area for what shape? ")
+#     getArea(shapeType)
+#
+# main()
+#
+# # End of function to calculate area of different shapes
+#
+# # ---------------------------------------------------------------------------------------------
 
-    return listPrimes
+# Lists, and list comprehensions.
+
+import math
+
+randList = ["string", 1.234, 28]
+oneToTen = list(range(10))
+
+randList = randList + oneToTen
+print(randList[0])
+print("List length: ", len(randList))
+first3 = randList[0:3]
+for i in first3:
+    print("{}: {}".format(first3.index(i), i))
+
+print(first3[0] * 3)
+
+print("string" in first3)
+print("Index of string" in first3.index("string"))
+print("How many strings are in it:", first3.count("string"))
+first3[0] = "New String"
+
+for i in first3:
+    print("{}:{}".format(first3.index(i), i))
 
 
-# Main function calling the prime functions above.
-maxNumber = int(input("Please enter a maximum prime number you want to search"))
-listOfPrimes = getPrimeList(maxNumber)
-for j in listOfPrimes:
-    print(j)
+
+
+#
+# # Object oriented programming:
+# # Modeling real world objects. Create a dog with certain attributes/variables/fields like height,
+# # weight and favorite food and capabilities/functions/methods like run, bark and eat.
+#
+# class Dog:
+#     def __init__(self, name="", height=0, weight=0):
+#         self.name = name
+#         self.height = height
+#         self.weight = weight
+#
+#     def run(self):
+#         print("{} the dog runs".format(self.name))
+#
+#     def bark(self):
+#         print("{} the dog barks".format(self.name))
+#
+#     def eat(self):
+#         print("{} the dog eats".format(self.name))
+#
+#
+# def main():
+#     spot = Dog("Spot", 66, 26)
+#     spot.bark()
+#
+#     bowser = Dog("Bowser", 78, 32)
+#     bowser.run()
+#
+# main()
+#
+# #-------------------------------------------------------------------------------------------------
+#
+# # Getters and setters example using object oriented programming.
+#
+# class Square:
+#     def __init__(self, height="0", width="0"):
+#         self.height = height
+#         self.width = width
+#
+#     @property
+#     def height(self):
+#         print("Retreiving the height")
+#         return self.__height
+#
+#     @height.setter
+#     def height(self, value):
+#         if value.isdigit():
+#             self.__height = value
+#         else:
+#             print("Please enter a valid value for the height")
+#
+#     @property
+#     def width(self):
+#         print("Retrieving the width")
+#         return self.__width
+#
+#     @width.setter
+#     def width(self, value):
+#         if value.isdigit():
+#             self.__width = value
+#         else:
+#             print("Please enter a valid value for the width")
+#
+#     def getArea(self):
+#         return int(self.__width) * int(self.__height)
+#
+# def main():
+#     aSquare = Square()
+#     height = input("Enter height: ")
+#     width = input("Enter width: ")
+#     aSquare.height = height
+#     aSquare.width = width
+#     print("Height = ", aSquare.height)
+#     print("Width = ", aSquare.width)
+#     print("The area of the square is: ", aSquare.getArea())
+#
+# main()
+#
+# #---------------------------------------------------------------------------------------------------
+#
+# # Warrior Game
+# # Warrior and Battle Class
+# # Warriors will have name, health, attack and block maximum. Attribute/variables.
+# # Warriors will have the capabilities to attack and block random amounts. Capabilities/methods/functions
+# # Battle class will loop until one warrior dies.
+# # Attack random() 0.0  to 1.0 * maxAttack + 0.5
+# # Block random()
+# # Warriors will each get a turn at attacking each other.
+# # Function gets 2 warriors where 1 warrior attacks another.
+# # Attacks and blocks are integers.
+#
+# import random
+# import math
+#
+# class Warrior:
+#     def __init__(self, name="Warrior", health="0", attackMax="0", blockMax="0"):
+#         self.name = name
+#         self.health = health
+#         self.attackMax = attackMax
+#         self.blockMax = blockMax
+#
+#     def attack(self):
+#         attackAmount = self.attackMax * (random.random() + 0.5)
+#         return attackAmount
+#
+#     def block(self):
+#         blockAmount = self.blockMax * (random.random() + 0.5)
+#         return blockAmount
+#
+# class Battle:
+#     def startFight(self, warrior1, warrior2):
+#         while True:
+#             if self.getAttackResult(warrior1, warrior2) == "Game Over":
+#                 print("Game Over!!")
+#                 break
+#
+#             if self.getAttackResult(warrior2, warrior1) == "Game Over":
+#                 print("Game Over!!")
+#                 break
+#
+#     @staticmethod
+#     def getAttackResult(warriorA, warriorB):
+#
+#         warriorAattackAmount = warriorA.attack()
+#         warriorBblockAmount = warriorB.block()
+#         damageToWarriorB = math.ceil(warriorAattackAmount - warriorBblockAmount)
+#         warriorB.health = warriorB.health - damageToWarriorB
+#
+#         print("{} attacks {} and deals {} damage" .format(warriorA.name, warriorB.name, damageToWarriorB))
+#         print("{} is down to {} health" .format(warriorB.name, warriorB.health))
+#
+#         if warriorB.health <= 0:
+#             print("{} has died and {} is victorious".format(warriorB.name, warriorA.name))
+#             return "Game Over!!"
+#         else:
+#             return "Fight again"
+#
+# def main():
+#
+#     maximus = Warrior("Maximus", 50, 20, 10)
+#     galaxon = Warrior("Galaxon", 50, 20, 10)
+#     battle = Battle()
+#     battle.startFight(maximus, galaxon)
+#
+# main()
+#
+# #-------------------------------------------------------------------------------------------------------------
+
+
 
 
 
